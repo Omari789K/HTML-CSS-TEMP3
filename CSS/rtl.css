@@ -17,6 +17,7 @@ html {
 }
 body {
     font-family: "Cairo", sans-serif;
+    direction: rtl;
 }
 ul {
     list-style: none;
@@ -122,6 +123,7 @@ header .main-nav .mega-menu {
     border-bottom: 3px solid var(--main-color);
     transition: var(--main-trans);
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
     gap: 40px;
@@ -181,16 +183,16 @@ header .mega-menu .links li a::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    left: -100%;
+    right: -100%;
     background-color: #fafafa;
     transition: .5s;
     z-index: -2;
 }
 header .mega-menu .links li a:hover::before {
-    left: 0;
+    right: 0;
 }
 header .mega-menu .links a i {
-    margin-right: 10px;
+    margin-left: 10px;
 }
 .landing {
     position: relative;
@@ -303,12 +305,12 @@ header .mega-menu .links a i {
     border-radius: 50%;
     background-color: var(--main-color);
     top: 50%;
-    right: -30px;
+    left: -30px;
     transform: translateY(-50%);
     transition: calc(var(--main-trans) + .5s);
 }
 .main-title::before {
-    left: -30px;
+    right: -30px;
 }
 .main-title:hover {
     color: #fff;
@@ -317,11 +319,11 @@ header .mega-menu .links a i {
     border-radius: 0;
     height: 100%;
     width: 50%;
-    right: 0;
+    left: 0;
     z-index: -1;
 }
 .main-title:hover::before {
-    left: 0;
+    right: 0;
 }
 .articals {
     position: relative;
@@ -385,14 +387,14 @@ header .mega-menu .links a i {
     color: var(--main-color);
 }
 .articals .box .more i {
-    animation: forward .5s infinite paused ;
+    animation: forward .5s infinite paused;
 }
 @keyframes forward {
     from {
-        transform: translateX(0);
+        transform: translateX(0) rotate(-180deg);
     }
     to {
-        transform: translateX(5px);
+        transform: translateX(5px) rotate(-180deg);
     }
 }
 .gallery {
@@ -587,7 +589,7 @@ header .mega-menu .links a i {
 }
 .testimonials .box img {
     position: absolute;
-    right: -20px;
+    left: -20px;
     top: -40px;
     background-color: var(--sect-color);
     border: 10px solid var(--sect-color);
@@ -632,7 +634,7 @@ header .mega-menu .links a i {
     position: absolute;
     width: 0;
     height: 100%;
-    left: 0;
+    right: 0;
     top: 0;
     border-radius: 10px;
     transition: var(--main-trans);
@@ -649,7 +651,7 @@ header .mega-menu .links a i {
     position: relative;
     width: 90%;
     max-width: 90%;
-    left: -30px;
+    right: -30px;
 }
 .team .box .top .img img {
     filter:grayscale(100%);
@@ -807,7 +809,7 @@ header .mega-menu .links a i {
     content: attr(data-prog);
     position: absolute;
     top: -40px;
-    right: 0px;
+    left: 0px;
 }
 .work-steps {
     padding: var(--sect-padding) 0;
@@ -1087,7 +1089,7 @@ header .mega-menu .links a i {
     font-weight: 900;
     font-family: "Font Awesome 6 Free";
     color: var(--main-color);
-    margin: 5px;
+    margin: 10px;
 }
 .pricing .box a {
     margin: 30px auto 40px;
@@ -1433,13 +1435,6 @@ footer .box .info address {
 footer > p {
     text-align: center;
     color: #fff;
-}
-footer > a {
-    background-color: var(--main-color);
-    color: #fff;
-    padding: 15px 20px;
-    font-weight: bold;
-    margin: 20px auto;
 }
 .spikes {
     position: relative;
